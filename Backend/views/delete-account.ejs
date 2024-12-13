@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account</title>
+  <style>
+    /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 16px;
+  color: #555;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #ff1a1a;
+}
+
+#message {
+  margin-top: 20px;
+  text-align: center;
+  color: #28a745;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Delete Your Account</h1>
+
+    <!-- Form for deleting account by username -->
+    <form action="/delete-account" method="POST" id="deleteAccountForm" class="form-box">
+        <div class="form-group">
+          <label for="username">Enter your Email:</label>
+          <input type="email" id="username" name="email" placeholder="Email" required>
+        </div>
+        <button type="submit" class="delete-btn">Delete Account</button>
+      </form>
+      
+      <div id="message">
+        <% if (typeof message !== 'undefined') { %>
+          <%= message %>
+        <% } %>
+      </div>
+  </div>

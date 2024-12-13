@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <style>
+      /* General Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      .container {
+        width: 300px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      label {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+
+      label:hover {
+        background-color: #0056b3;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      .login-link {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .login-link a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .login-link a:hover {
+        text-decoration: underline;
+      }
+
+      .form-divider {
+        margin: 30px 0;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sign-Up Form -->
+    <div class="container">
+      <h1>Sign Up</h1>
+
+      <% if (typeof message !== 'undefined') { %>
+        <p class="error-message"><%= message %></p>
+      <% } %>
+      <form id="signupForm" action="/signup" method="post">
+        <input type="text" name="name" placeholder="Name" id="signupname" />
+        <input type="text" name="email" placeholder="Email" id="signupemail" />
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          id="signupUsername"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          id="signupPassword"
+        />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- Divider -->
+    <div class="form-divider">OR</div>
+
+
+    <div class="login-link">
+      Already have an account?
+      <a href="/login">Log in</a>
+    </div>
+  </body>
+</html>
